@@ -17,14 +17,6 @@
   transition: all 0.2s ease-in-out;
 }
 
-li {
-  list-style: none;
-}
-
-a {
-  text-decoration: none;
-}
-
 body {
   background: var(--bg);
   color: var(--text);
@@ -43,6 +35,10 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-around;
+}
+
+.menu ul li {
+  list-style: none;
 }
 
 .menu ul li a {
@@ -204,20 +200,17 @@ body {
   grid-template-columns: 1fr 1fr;
 }
 
-.accordion {
+.job-content img {
   margin: 0 auto;
+}
+
+.accordion {
+  margin: 0 auto 100px auto;
   max-width: 100%;
 }
 
-/* .accordion .accordion-item {
-
-} */
-
 .accordion .accordion-item {
-  border-bottom: 3px solid var(--secondary);
-  border-left: 3px solid var(--secondary);
-  border-right: 3px solid var(--secondary);
-  border-radius: 35px;
+  margin-bottom: 10px;
 }
 
 .accordion .accordion-item .accordion-title {
@@ -242,7 +235,21 @@ body {
   top: 10px;
 }
 
-.accordion .accordion-item .accordion-title h2:hover {
+.accordion .accordion-item.is-active .accordion-title h2::after {
+  background: url(../images/ico/accordion-btn-close.svg) no-repeat center center /
+  contain;
+  width: 25px;
+  height: 25px;
+  right: 3px;
+  top: 5px;
+}
+
+.accordion .accordion-item.is-active .accordion-title h2:hover::after {
+  background: url(../images/ico/accordion-btn-close-hover.svg) no-repeat center center /
+  contain;
+}
+
+.accordion .accordion-item .accordion-title h2:hover, .accordion .accordion-item.is-active .accordion-title h2 {
   color: var(--accent);
 }
 
@@ -251,14 +258,41 @@ body {
 }
 
 .accordion .accordion-item .accordion-content {
-  opacity: 0;
   height: 0;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate3d(0px, -50px, 0px);
+  transition: none;
+  padding: 0px 50px;
 }
 
 .accordion .accordion-item.is-active .accordion-content {
-  padding: 20px;
   opacity: 1;
+  padding: 50px 50px 20px 50px;
   height: auto;
+  border-left: 3px solid var(--secondary);
+  border-right: 3px solid var(--secondary);
+  border-bottom: 3px solid var(--secondary);
+  border-radius: 0px 0px 30px 30px;
+  margin-top: -30px;
+  transform: translate3d(0px, 0px, 0px);
+  transition: 0.5s;
+  pointer-events: all;
+}
+
+.accordion .accordion-item .accordion-content a{
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.accordion .accordion-item .accordion-content .logo-tec {
+  width: 100%;
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .footer {
