@@ -28,7 +28,7 @@ body {
   margin: 0 auto;
   max-width: 860px;
   width: 100%;
-  border-bottom: 3px solid var(--accent);
+  border-bottom: 1px solid var(--accent);
 }
 
 .menu ul {
@@ -45,7 +45,7 @@ body {
   color: var(--text);
   text-decoration: none;
   font-size: 18px;
-  padding: 10px 0px;
+  padding: 20px 0px;
   display: block;
 }
 
@@ -80,7 +80,7 @@ body {
 .header-img {
   width: 475px;
   height: 518px;
-  background: url(../images/pht/pixar.svg);
+  background: url(../images/pht/pixar.svg) no-repeat left center / contain;
   position: absolute;
   right: 0px;
   top: 50%;
@@ -90,7 +90,7 @@ body {
 }
 
 .header-img:hover {
-  background: url(../images/pht/real.svg);
+  background: url(../images/pht/real.svg) no-repeat left center / contain;
 }
 
 /* Sobre */
@@ -98,15 +98,15 @@ body {
   margin: 0 auto;
   max-width: 1280px;
   width: 100%;
-  height: 100vh;
 }
 
 .sobre h1 {
   font-size: 52px;
-  border-bottom: 3px solid var(--accent);
+  border-bottom: 1px solid var(--accent);
   text-align: center;
   max-width: 500px;
   margin: 0 auto;
+  padding: 20px 0px;
   text-transform: uppercase;
 }
 
@@ -185,10 +185,11 @@ body {
 
 .trajetoria h1 {
   font-size: 52px;
-  border-bottom: 3px solid var(--accent);
+  border-bottom: 1px solid var(--accent);
   text-align: center;
   max-width: 500px;
   margin: 0 auto;
+  padding: 20px 0px;
   text-transform: uppercase;
 }
 
@@ -198,6 +199,29 @@ body {
   display: grid;
   align-items: center;
   grid-template-columns: 1fr 1fr;
+  position: relative;
+}
+
+.job-content.happy::before {
+  content: "";
+  background: url(./../images/bkg/bkg-trajetoria-before.png) no-repeat center
+    center / contain;
+  width: 199px;
+  height: 557px;
+  position: absolute;
+  left: -200px;
+  top: -50px;
+}
+
+.job-content.dot::after {
+  content: "";
+  background: url(./../images/bkg/bkg-trajetoria-after.png) no-repeat center
+    center / contain;
+  width: 120px;
+  height: 514px;
+  position: absolute;
+  right: -120px;
+  top: -25px;
 }
 
 .job-content img {
@@ -237,7 +261,7 @@ body {
 
 .accordion .accordion-item.is-active .accordion-title h2::after {
   background: url(../images/ico/accordion-btn-close.svg) no-repeat center center /
-  contain;
+    contain;
   width: 25px;
   height: 25px;
   right: 3px;
@@ -245,11 +269,12 @@ body {
 }
 
 .accordion .accordion-item.is-active .accordion-title h2:hover::after {
-  background: url(../images/ico/accordion-btn-close-hover.svg) no-repeat center center /
-  contain;
+  background: url(../images/ico/accordion-btn-close-hover.svg) no-repeat center
+    center / contain;
 }
 
-.accordion .accordion-item .accordion-title h2:hover, .accordion .accordion-item.is-active .accordion-title h2 {
+.accordion .accordion-item .accordion-title h2:hover,
+.accordion .accordion-item.is-active .accordion-title h2 {
   color: var(--accent);
 }
 
@@ -280,7 +305,7 @@ body {
   pointer-events: all;
 }
 
-.accordion .accordion-item .accordion-content a{
+.accordion .accordion-item .accordion-content a {
   color: var(--accent);
   text-decoration: none;
   font-weight: 700;
@@ -295,6 +320,236 @@ body {
   align-items: center;
 }
 
+/* Buttons */
+
+.buttons {
+  width: 80%;
+  margin: 0 auto;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.access-btn {
+  width: 260px;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  text-transform: uppercase;
+  color: var(--secondary);
+  border: 3px solid var(--secondary);
+  padding: 20px 40px;
+  border-radius: 40px;
+  text-decoration: none;
+}
+
+.access-btn:hover {
+  color: var(--accent);
+  border: 3px solid var(--accent);
+}
+
+.download-btn {
+  width: 260px;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  text-transform: uppercase;
+  color: var(--bg);
+  background: var(--secondary);
+  border: 3px solid var(--secondary);
+  padding: 20px 40px;
+  border-radius: 40px;
+  text-decoration: none;
+}
+
+.download-btn:hover {
+  border: 3px solid var(--accent);
+  background: var(--accent);
+}
+
+/* Projetos */
+.projetos {
+  margin: 100px auto 0px auto;
+  width: 100%;
+}
+
+.projetos h1 {
+  font-size: 52px;
+  border-bottom: 1px solid var(--accent);
+  text-align: center;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px 0px;
+  text-transform: uppercase;
+}
+
+.bkg-project {
+  background: url(./../images/bkg/bkg-projetos.svg) center center / cover;
+  padding: 100px 0px;
+}
+
+.project:first-child {
+  margin-top: 0px;
+}
+
+.project {
+  max-width: 860px;
+  margin: 100px auto 0px auto;
+  width: 100%;
+  height: 127px;
+  border: 3px solid var(--secondary);
+  border-radius: 45px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.project + .project {
+  margin-top: 20px;
+}
+
+.project a {
+  display: flex;
+  align-items: center;
+}
+
+.project a:last-child {
+  position: absolute;
+  right: 30px;
+}
+
+.project .git-btn {
+  width: 27px;
+  height: 27px;
+  background: url(../images/ico/ico-git.svg);
+  border: none;
+  cursor: pointer;
+}
+
+.project .git-btn:hover {
+  background: url(../images/ico/ico-git-hover.svg);
+}
+
+.project p {
+  font-size: 14px;
+  padding: 0px 45px;
+}
+
+/* Contato */
+.contato {
+  margin: 100px auto;
+  max-width: 860px;
+  width: 100%;
+}
+
+.contato h1 {
+  font-size: 52px;
+  border-bottom: 1px solid var(--accent);
+  text-align: center;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px 0px;
+  text-transform: uppercase;
+}
+
+.links {
+  margin: 150px auto;
+  max-width: 526px;
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+}
+
+.links button {
+  width: 100px;
+  height: 100px;
+  border: none;
+  cursor: pointer;
+}
+
+.links .linkedin {
+  background: url(../images/ico/ico-linkedin.svg) no-repeat center center / contain;
+}
+
+.links .linkedin:hover {
+  background: url(../images/ico/ico-linkedin-hover.svg) no-repeat center center / contain;
+}
+
+.links .github {
+  background: url(../images/ico/ico-github.svg) no-repeat center center / contain;
+}
+
+.links .github:hover {
+  background: url(../images/ico/ico-github-hover.svg) no-repeat center center / contain;
+}
+
+.links .facebook {
+  background: url(../images/ico/ico-facebook.svg) no-repeat center center / contain;
+}
+
+.links .facebook:hover {
+  background: url(../images/ico/ico-facebook-hover.svg) no-repeat center center / contain;
+}
+
+.links .instagram {
+  background: url(../images/ico/ico-instagram.svg) no-repeat center center / contain;
+}
+
+.links .instagram:hover {
+  background: url(../images/ico/ico-instagram-hover.svg) no-repeat center center / contain;
+}
+
+.dados {
+  margin: 0 auto;
+  max-width: 526px;
+  padding-bottom: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.dados a {
+  text-decoration: none;
+  color: var(--text);
+  position: relative;
+  padding-left: 60px;
+}
+
+.dados a:hover {
+  transform: scale(1.05);
+}
+
+.dados .whats::before {
+  content: "";
+  width: 50px;
+  height: 50px;
+  background: url(./../images/ico/ico-whats.svg);
+  position: absolute;
+  left: 0px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.dados .whats:hover::before {
+  background: url(./../images/ico/ico-whats-hover.svg);
+}
+
+.dados .email::before {
+  content: "";
+  width: 46px;
+  height: 37px;
+  background: url(./../images/ico/ico-email.svg);
+  position: absolute;
+  left: 0px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.dados .email:hover::before {
+  background: url(./../images/ico/ico-email-hover.svg);
+}
+
 .footer {
   margin: 0 auto;
   width: 100%;
@@ -303,9 +558,322 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  border-top: 3px solid var(--accent);
+  border-top: 1px solid var(--accent);
 }
 
 .footer p {
   color: var(--text);
+}
+
+@media (max-width: 1280px) {
+  section, .header {
+    padding: 0px 20px;
+  }
+
+  .header-content {
+    left: 20px;
+  }
+
+  .slide {
+    padding: 0px 20px;
+  }
+
+  /* .slide .swiper-prev {
+    left: 20px;
+  }
+
+  .slide .swiper-next {
+    right: 20px;
+  } */
+
+  .swiper {
+    width: 812px;
+  }
+
+  .swiper .swiper-content {
+    width: 812px;
+  }
+
+  .swiper .swiper-content .swiper-item {
+    width: 812px;
+  }
+
+  .swiper .swiper-content .swiper-item img {
+    width: 400px;
+  }
+
+  .swiper .swiper-content .swiper-item .content {
+    width: 412px;
+  }
+
+  .job-content.happy::before {
+    display: none;
+  }
+
+  .job-content.dot::after {
+    display: none;
+  }
+}
+
+@media (max-width: 1024px) {
+
+  .swiper {
+    width: 520px;
+  }
+
+  .swiper .swiper-content {
+    width: 520px;
+  }
+  .swiper .swiper-content .swiper-item {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .swiper .swiper-content .swiper-item img {
+    margin: 0 auto;
+    width: 250px;
+  }
+
+  .swiper .swiper-content .swiper-item .content {
+    margin-top: 20px;
+    width: 520px;
+  }
+
+  .swiper .swiper-content .swiper-item .content p {
+    text-align: center;
+  }
+}
+
+@media (max-width: 860px) {
+  .header-img {
+    width: 360px;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .header-content {
+    width: 100%;
+    top: 55%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 1;
+  }
+
+  .header-content h1 {
+    font-size: 52px;
+    line-height: 42px;
+  }
+
+  .sobre h1 {
+    font-size: 36px;
+    max-width: 320px;
+  }
+
+  .header-content p {
+    font-size: 22px;
+  }
+
+  .trajetoria h1 {
+    font-size: 36px;
+    max-width: 320px;
+  }
+
+  .job-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .job-content.dot {
+    flex-direction: column-reverse;
+  }
+
+  .job-content img {
+    margin-bottom: 50px;
+  }
+
+  .buttons {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .buttons a {
+    max-width: 200px;
+    font-size: 18px;
+  }
+
+  .projetos {
+    margin-top: 50px;
+  }
+
+  .bkg-project {
+    background-size: auto;
+    background-repeat: repeat-y;
+  }
+
+  .projetos h1 {
+    font-size: 36px;
+    max-width: 320px;
+  }
+
+  .project {
+    flex-direction: column;
+    height: auto;
+    padding: 80px 0px 60px 0px;
+    margin-bottom: 100px;
+  }
+
+  .project:first-child {
+    margin-top: 100px;
+  }
+
+  .project:last-child {
+    margin-bottom: 0px;
+  }
+
+  .project .project-hero {
+    top: -60px;
+    position: absolute;
+  }
+
+  .project p {
+    padding: 0px 30px;
+  }
+
+  .project a:last-child {
+    position: absolute;
+    bottom:20px;
+    right: unset;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .contato {
+    margin-top: 0px;
+  }
+
+  .contato h1 {
+    font-size: 36px;
+    max-width: 320px;
+  }
+
+  .footer {
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 560px) {
+
+  .menu ul li a {
+    font-size: 12px;
+  }
+
+  p {
+    font-size: 12px;
+  }
+
+  li {
+    font-size: 12px;
+  }
+
+  .header-content {
+    max-width: 320px;
+  }
+
+  .header-content h1 {
+    font-size: 42px;
+  }
+
+  .header .header-img {
+    width: 320px;
+    background-position-x: -20px;
+  }
+
+  .slide {
+    padding: 0px;
+  }
+
+  .swiper {
+    width: 320px;
+  }
+
+  .swiper .swiper-content {
+    width: 320px;
+  }
+
+  .swiper .swiper-content .swiper-item {
+    width: 320px;
+  }
+
+  .swiper .swiper-content .swiper-item .content {
+    padding: 0px 20px;
+    width: 320px;
+  }
+
+  .swiper .swiper-content .swiper-item img {
+    width: 150px;
+  }
+
+  .swiper .swiper-content .swiper-item .content p {
+    font-size: 12px;
+  }
+
+  .slide .swiper-prev {
+    width: 50px;
+    height: 50px;
+    top: unset;
+    bottom: -100px;
+    left: calc(50% - 60px);
+  }
+
+  .slide .swiper-next {
+    width: 50px;
+    height: 50px;
+    top: unset;
+    bottom: -100px;
+    right: calc(50% - 60px);
+  }
+
+  .job-content img {
+    width: 100%;
+  }
+
+  .accordion .accordion-item .accordion-title h2 {
+    font-size: 16px;
+  }
+  .buttons {
+    flex-direction: column;
+    gap: 32px;
+    height: auto;
+  }
+
+  .buttons a {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .links {
+    margin: 80px auto 50px auto;
+    max-width: 133px;
+    flex-wrap: wrap;
+    gap: 32px;
+  }
+
+  .links button {
+    width: 50px;
+    height: 50px;
+    background-size: contain;
+  }
+
+  .contato {
+    margin-bottom: 50px;
+  }
+
+  .dados {
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+  }
 }
