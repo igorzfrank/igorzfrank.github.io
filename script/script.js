@@ -39,5 +39,22 @@ function initAccordion() {
   });
 }
 
+function initMenu() {
+  let menu = document.querySelector(".menu");
+  let menuBtn = document.querySelector(".menu-btn");
+  let menuLinks = document.querySelectorAll(".menu a");
+
+  menuBtn.addEventListener("click", () => {
+    menu.classList.toggle("is-active");
+  });
+
+  menuLinks.forEach((item) => {
+    item.addEventListener("click", function () {
+      menu.classList.remove("is-active");
+    });
+  });
+}
+
+initMenu();
 initSlide();
 initAccordion();
