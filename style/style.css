@@ -14,7 +14,7 @@
   margin: 0px;
   box-sizing: border-box;
   scroll-behavior: smooth;
-  /* transition: all 0.2s ease-in-out; */
+  transition: all 0.2s ease-in-out;
 }
 
 body {
@@ -710,6 +710,7 @@ body {
   }
 
   .job-content {
+    margin: 50px auto;
     display: flex;
     flex-direction: column;
   }
@@ -720,6 +721,19 @@ body {
 
   .job-content img {
     margin-bottom: 50px;
+  }
+
+  .accordion .accordion-item .accordion-title h2::after {
+    top: 5px;
+  }
+
+  .accordion .accordion-item.is-active .accordion-title h2::after {
+    top: 0px;
+  }
+
+  .accordion .accordion-item .accordion-content .logo-tec {
+    gap: 32px;
+    justify-content: space-around;
   }
 
   .buttons {
@@ -754,7 +768,7 @@ body {
   }
 
   .project:first-child {
-    margin-top: 100px;
+    margin-top: 50px;
   }
 
   .project:last-child {
@@ -876,6 +890,7 @@ body {
 
   .swiper .swiper-content .swiper-item {
     width: 320px;
+    justify-content: flex-start;
   }
 
   .swiper .swiper-content .swiper-item .content {
