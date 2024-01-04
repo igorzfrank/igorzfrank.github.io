@@ -79,8 +79,8 @@ body {
 }
 
 .btn-up {
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   position: fixed;
   bottom: 100px;
   right: 100px;
@@ -110,7 +110,6 @@ body {
 }
 
 .btn-up:hover {
-  /* background: var(--accent); */
   border: 2px solid var(--accent);
 }
 
