@@ -23,10 +23,19 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+body::after {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  z-index: -1;
+  content: url(./../images/ico/ico-menu-hover.svg) url(./../images/ico/ico-menu-close-hover.svg) url(../images/pht/real.svg) url(../images/ico/swiper-btn-hover.svg) url(../images/ico/accordion-btn-close.svg) url(../images/ico/accordion-btn-close-hover.svg) url(../images/ico/accordion-btn-open-hover.svg) url(../images/ico/ico-git-hover.svg) url(../images/ico/ico-linkedin-hover.svg) url(../images/ico/ico-github-hover.svg) url(../images/ico/ico-facebook-hover.svg) url(../images/ico/ico-instagram-hover.svg) url(./../images/ico/ico-whats-hover.svg) url(./../images/ico/ico-email-hover.svg); 
+}
+
 /* Menu */
 .menu {
   margin: 0 auto;
-  max-width: 860px;
+  max-width: 1024px;
   width: 100%;
   border-bottom: 1px solid var(--accent);
   position: relative;
@@ -69,7 +78,7 @@ body {
   color: var(--text);
   text-decoration: none;
   font-size: 18px;
-  padding: 20px 0px;
+  padding: 30px 0px;
   display: block;
   transition: color .2s ease-in;
 }
@@ -124,7 +133,7 @@ body {
 
 .header-content {
   position: absolute;
-  left: calc(50% - 425px);
+  left: calc(50% - 475px);
   top: 50%;
   transform: translateY(-50%);
 }
