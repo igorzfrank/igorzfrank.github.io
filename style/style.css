@@ -507,7 +507,7 @@ body::after {
 
 .project p {
   font-size: 14px;
-  padding: 0px 45px;
+  padding: 0px 100px 0px 40px;
 }
 
 /* Contato */
