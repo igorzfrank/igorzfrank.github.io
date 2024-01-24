@@ -5,21 +5,39 @@ function initSlide() {
 
   let pos = 0;
   let itemWidth = +swiperContent.clientWidth;
-
+  console.log(pos);
   swiperNextBtn.addEventListener("click", () => {
     if (pos > itemWidth * -2) {
       pos -= itemWidth;
       swiperContent.style.transform = `translate3d(${pos}px, 0, 0)`;
+      checkDisabled();
     }
+    console.log(pos);
   });
 
   swiperPrevBtn.addEventListener("click", () => {
     if (pos < 0) {
       pos += itemWidth;
       swiperContent.style.transform = `translate3d(${pos}px, 0, 0)`;
-      console.log(pos);
     }
+    checkDisabled();
+    console.log(pos);
   });
+
+  function checkDisabled() {
+    if (pos == 0) {
+      swiperPrevBtn.classList.add("disabled");
+      swiperNextBtn.classList.remove("disabled");
+    } else if (pos <= itemWidth * -2) {
+      swiperPrevBtn.classList.remove("disabled");
+      swiperNextBtn.classList.add("disabled");
+    } else {
+      swiperPrevBtn.classList.remove("disabled");
+      swiperNextBtn.classList.remove("disabled");
+    }
+  }
+
+  checkDisabled();
 }
 
 function initAccordion() {

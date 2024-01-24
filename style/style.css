@@ -29,7 +29,19 @@ body::after {
   height: 0;
   overflow: hidden;
   z-index: -1;
-  content: url(./../images/ico/ico-menu-hover.svg) url(./../images/ico/ico-menu-close-hover.svg) url(../images/pht/real.svg) url(../images/ico/swiper-btn-hover.svg) url(../images/ico/accordion-btn-close.svg) url(../images/ico/accordion-btn-close-hover.svg) url(../images/ico/accordion-btn-open-hover.svg) url(../images/ico/ico-git-hover.svg) url(../images/ico/ico-linkedin-hover.svg) url(../images/ico/ico-github-hover.svg) url(../images/ico/ico-facebook-hover.svg) url(../images/ico/ico-instagram-hover.svg) url(./../images/ico/ico-whats-hover.svg) url(./../images/ico/ico-email-hover.svg); 
+  content: url(./../images/ico/ico-menu-hover.svg)
+    url(./../images/ico/ico-menu-close-hover.svg) url(../images/pht/real.svg)
+    url(../images/ico/swiper-btn-hover.svg)
+    url(../images/ico/accordion-btn-close.svg)
+    url(../images/ico/accordion-btn-close-hover.svg)
+    url(../images/ico/accordion-btn-open-hover.svg)
+    url(../images/ico/ico-git-hover.svg)
+    url(../images/ico/ico-linkedin-hover.svg)
+    url(../images/ico/ico-github-hover.svg)
+    url(../images/ico/ico-facebook-hover.svg)
+    url(../images/ico/ico-instagram-hover.svg)
+    url(./../images/ico/ico-whats-hover.svg)
+    url(./../images/ico/ico-email-hover.svg);
 }
 
 /* Menu */
@@ -43,7 +55,8 @@ body::after {
 
 .menu .menu-btn {
   display: none;
-  background: url(./../images/ico/ico-menu.svg) no-repeat center center / contain;
+  background: url(./../images/ico/ico-menu.svg) no-repeat center center /
+    contain;
   width: 30px;
   height: 25px;
   border: none;
@@ -51,17 +64,20 @@ body::after {
 }
 
 .menu .menu-btn:hover {
-  background: url(./../images/ico/ico-menu-hover.svg) no-repeat center center / contain;
+  background: url(./../images/ico/ico-menu-hover.svg) no-repeat center center /
+    contain;
 }
 
 .menu.is-active .menu-btn {
-  background: url(./../images/ico/ico-menu-close.svg) no-repeat center center / contain;
+  background: url(./../images/ico/ico-menu-close.svg) no-repeat center center /
+    contain;
   width: 30px;
   height: 30px;
 }
 
 .menu.is-active .menu-btn:hover {
-  background: url(./../images/ico/ico-menu-close-hover.svg) no-repeat center center / contain;
+  background: url(./../images/ico/ico-menu-close-hover.svg) no-repeat center
+    center / contain;
 }
 
 .menu ul {
@@ -80,7 +96,7 @@ body::after {
   font-size: 18px;
   padding: 30px 0px;
   display: block;
-  transition: color .2s ease-in;
+  transition: color 0.2s ease-in;
 }
 
 .menu ul li a:hover {
@@ -105,13 +121,13 @@ body::after {
 
 .btn-up img {
   width: 40px;
-  animation: up infinite .5s alternate;
+  animation: up infinite 0.5s alternate;
 }
 
 @keyframes up {
   100% {
     transform: translateY(-3px);
-  } 
+  }
 
   0% {
     transform: translateY(3px);
@@ -125,10 +141,16 @@ body::after {
 /* Header */
 .header {
   margin: 0 auto;
-  max-width: 1280px;
   width: 100%;
-  height: 95vh;
+  height: 92svh;
+  background-color: #060d13b2;
+}
+
+.header-container {
   position: relative;
+  margin: 0 auto;
+  max-width: 1280px;
+  height: 100%;
 }
 
 .header-content {
@@ -136,6 +158,7 @@ body::after {
   left: calc(50% - 475px);
   top: 50%;
   transform: translateY(-50%);
+  z-index: 1;
 }
 
 .header-content h1 {
@@ -242,6 +265,11 @@ body::after {
   right: unset;
   left: 0px;
   transform: translateY(-50%) rotate(180deg);
+}
+
+.disabled {
+  pointer-events: none;
+  opacity: .3;
 }
 
 .slide button:hover {
@@ -459,7 +487,7 @@ body::after {
 }
 
 .bkg-project {
-  background: url(./../images/bkg/bkg-projetos.svg) center center / cover;
+  background: url(./../images/bkg/bkg-projetos.svg) repeat center center / cover;
   padding: 100px 0px;
 }
 
@@ -471,43 +499,61 @@ body::after {
   max-width: 860px;
   margin: 100px auto 0px auto;
   width: 100%;
-  height: 127px;
+  height: 280px;
   border: 3px solid var(--secondary);
   border-radius: 45px;
-  position: relative;
   display: flex;
   align-items: center;
 }
 
 .project + .project {
-  margin-top: 20px;
+  margin-top: 60px;
 }
 
-.project a {
+.project-hero {
+  background: url(../images/pht/project-1.png) no-repeat center center / auto;
+  width: 468px;
+  height: 100%;
+}
+
+.project-2 .project-hero {
+  background: url(../images/pht/project-2.png) no-repeat center center / auto;
+}
+
+.project .container {
+  max-width: 42%;
+  padding: 0px 20px;
+}
+
+.project-links {
   display: flex;
-  align-items: center;
+  gap: 22px;
+  padding: 20px 0px;
 }
 
-.project a:last-child {
-  position: absolute;
-  right: 30px;
+.project-links a {
+  color: var(--text);
+  text-decoration: none;
 }
 
-.project .git-btn {
-  width: 27px;
-  height: 27px;
-  background: url(../images/ico/ico-git.svg);
-  border: none;
-  cursor: pointer;
+.project-links a:hover {
+  transform: translateY(-2px);
+  opacity: .9;
 }
 
-.project .git-btn:hover {
-  background: url(../images/ico/ico-git-hover.svg);
+.project-tecs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
-.project p {
-  font-size: 14px;
-  padding: 0px 100px 0px 40px;
+.project-tecs button {
+  font-family: "Poppins", sans-serif;
+  color: var(--text);
+  padding: 8px 16px;
+  background: transparent;
+  border: 2px solid var(--secondary);
+  border-radius: 8px;
 }
 
 /* Contato */
@@ -543,35 +589,43 @@ body::after {
 }
 
 .links .linkedin {
-  background: url(../images/ico/ico-linkedin.svg) no-repeat center center / contain;
+  background: url(../images/ico/ico-linkedin.svg) no-repeat center center /
+    contain;
 }
 
 .links .linkedin:hover {
-  background: url(../images/ico/ico-linkedin-hover.svg) no-repeat center center / contain;
+  background: url(../images/ico/ico-linkedin-hover.svg) no-repeat center center /
+    contain;
 }
 
 .links .github {
-  background: url(../images/ico/ico-github.svg) no-repeat center center / contain;
+  background: url(../images/ico/ico-github.svg) no-repeat center center /
+    contain;
 }
 
 .links .github:hover {
-  background: url(../images/ico/ico-github-hover.svg) no-repeat center center / contain;
+  background: url(../images/ico/ico-github-hover.svg) no-repeat center center /
+    contain;
 }
 
 .links .facebook {
-  background: url(../images/ico/ico-facebook.svg) no-repeat center center / contain;
+  background: url(../images/ico/ico-facebook.svg) no-repeat center center /
+    contain;
 }
 
 .links .facebook:hover {
-  background: url(../images/ico/ico-facebook-hover.svg) no-repeat center center / contain;
+  background: url(../images/ico/ico-facebook-hover.svg) no-repeat center center /
+    contain;
 }
 
 .links .instagram {
-  background: url(../images/ico/ico-instagram.svg) no-repeat center center / contain;
+  background: url(../images/ico/ico-instagram.svg) no-repeat center center /
+    contain;
 }
 
 .links .instagram:hover {
-  background: url(../images/ico/ico-instagram-hover.svg) no-repeat center center / contain;
+  background: url(../images/ico/ico-instagram-hover.svg) no-repeat center center /
+    contain;
 }
 
 .dados {
@@ -644,7 +698,8 @@ body::after {
     right: 50px;
   }
 
-  section, .header {
+  section,
+  .header {
     padding: 0px 20px;
   }
 
@@ -694,7 +749,6 @@ body::after {
 }
 
 @media (max-width: 1024px) {
-
   .swiper {
     width: 520px;
   }
@@ -725,16 +779,15 @@ body::after {
 @media (max-width: 860px) {
   .header-img {
     width: 360px;
-    top: 50px;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, -50%);
   }
 
   .header-content {
     width: 100%;
     top: 55%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%);
     text-align: center;
     z-index: 1;
   }
@@ -794,6 +847,11 @@ body::after {
     justify-content: space-between;
   }
 
+  .buttons.curso {
+    justify-content: center;
+    margin-bottom: 60px;
+  }
+
   .buttons a {
     max-width: 200px;
     font-size: 18px;
@@ -806,43 +864,39 @@ body::after {
   .bkg-project {
     background-size: auto;
     background-repeat: repeat-y;
-  }
-
-  .projetos h1 {
-    font-size: 36px;
-    max-width: 320px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 60px;
   }
 
   .project {
+    width: 320px;
     flex-direction: column;
     height: auto;
-    padding: 80px 0px 60px 0px;
-    margin-bottom: 100px;
+    max-height: 500px;
+    border-radius: 32px;
   }
 
-  .project:first-child {
-    margin-top: 50px;
-  }
-
-  .project:last-child {
-    margin-bottom: 0px;
+  .project + .project {
+    margin-top: 0px;
   }
 
   .project .project-hero {
-    top: -60px;
-    position: absolute;
+    background-size: contain;
+    display: block;
+    width: 320px;
+    height: 188px;
+    transform: translateY(-5px);
   }
 
-  .project p {
-    padding: 0px 30px;
+  .project .container {
+    max-width: 100%;
+    padding: 20px 20px 40px 20px;
   }
 
-  .project a:last-child {
-    position: absolute;
-    bottom:20px;
-    right: unset;
-    left: 50%;
-    transform: translateX(-50%);
+  .project-2 {
+    padding: 0px;
   }
 
   .contato {
@@ -861,7 +915,6 @@ body::after {
 }
 
 @media (max-width: 560px) {
-
   .btn-up {
     width: 75px;
     height: 75px;
@@ -896,11 +949,11 @@ body::after {
     opacity: 0;
     right: 0px;
     height: 0px;
-    transition: all .2s ease-in-out;
+    transition: all 0.2s ease-in-out;
     z-index: 5;
     pointer-events: none;
   }
-  
+
   .menu.is-active ul {
     padding: 80px 10px 10px 10px;
     display: block;
@@ -925,6 +978,10 @@ body::after {
 
   li {
     font-size: 12px;
+  }
+
+  .header {
+    height: 100svh;
   }
 
   .header-content {
