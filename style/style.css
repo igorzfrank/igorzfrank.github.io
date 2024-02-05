@@ -874,7 +874,7 @@ body::after {
     width: 320px;
     flex-direction: column;
     height: auto;
-    max-height: 500px;
+    /* max-height: 520px; */
     border-radius: 32px;
   }
 
